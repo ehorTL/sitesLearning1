@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head
+>	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyDDuGt0E5IEGkcE6ZfrKfUtE9Ko_de66pA"></script>
+</head>
+<body>
+	<div id="map_canvas"></div>
+	<script>
+	navigator.geolocation.getCurrentPosition(function(position) {
+  var latlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+  var myOptions = {
+    zoom: 8,
+    center: latlng,
+    mapTypeId: google.maps.MapTypeId.TERRAIN,
+    disableDefaultUI: true
+  }
+  var map = new google.maps.Map(document.querySelector("#map_canvas"), myOptions);
+});
+	</script>
+</body>
+</html>
